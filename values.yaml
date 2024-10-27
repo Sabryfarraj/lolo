@@ -1,0 +1,27 @@
+frontend:
+  image:
+    repository: sabryfarraj/frontend
+    tag: v1.1
+  service:
+    port: 80
+    targetPort: 3000
+  domain: next.local.fe
+
+login:
+  image:
+    repository: sabryfarraj/login
+    tag: latest2
+  service:
+    port: 80
+    targetPort: 1020
+
+user:
+  image:
+    repository: sabryfarraj/user
+    tag: v1.1
+  service:
+    port: 80
+    targetPort: 1030
+
+backend:
+  domain: next.local.be
