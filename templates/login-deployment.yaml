@@ -13,6 +13,9 @@ spec:
     metadata:
       labels:
         app: login
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/db-configmap.yaml") . | sha256sum }}
+        checksum/secret: {{ include (print $.Template.BasePath "/db-secret.yaml") . | sha256sum }}
     spec:
       containers:
         - name: login
